@@ -23,7 +23,7 @@ def analyze_news(news_text):
         )
 
         response = client.chat.completions.create(
-            model="deepseek-chat",  # Gunakan model yang sesuai, misalnya gpt-4o-mini
+            model="deepseek-chat",
             messages=[
                 {"role": "system", "content": "Anda adalah asisten yang ahli dalam mendeteksi berita hoaks."},
                 {"role": "user", "content": prompt}
@@ -38,11 +38,11 @@ def analyze_news(news_text):
 # Logika saat tombol Analisis ditekan
 if submit_button:
     if news_text.strip() == "":
-        st.error("Harap masukkan teks berita!")
+        st.error("🚨Mohon masukkan teks berita!")
     else:
-        with st.spinner("Menganalisis..."):
+        with st.spinner("Mengevaluasi..."):
             result = analyze_news(news_text)
-            st.subheader("Hasil Analisis")
+            st.subheader("Hasil Evaluasi")
             st.write(result)
 
 footer_html = """
