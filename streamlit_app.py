@@ -6,7 +6,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #9DA5F2; /* Ganti dengan kode warna yang diinginkan, misalnya #f0f2f6 untuk abu-abu muda */
+        background-color: #D9EFCD; /* Ganti dengan kode warna yang diinginkan, misalnya #f0f2f6 untuk abu-abu muda */
     }
     </style>
     """,
