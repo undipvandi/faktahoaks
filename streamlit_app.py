@@ -14,7 +14,7 @@ with st.form("hoax_form"):
 # Fungsi untuk memanggil OpenAI API
 def analyze_news(news_text):
     try:
-        client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])  # Ambil API key dari secrets
+        client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"], base_url="https://api.deepseek.com")  # Ambil API key dari secrets
         prompt = (
             "Analisis teks berita berikut dan tentukan apakah berita ini berpotensi hoaks atau tidak. "
             "Berikan penjelasan singkat tentang alasan Anda. Jika teks tidak cukup jelas, nyatakan bahwa informasi tambahan diperlukan. "
@@ -22,13 +22,11 @@ def analyze_news(news_text):
         )
 
         response = client.chat.completions.create(
-            model="gpt-4o-mini",  # Gunakan model yang sesuai, misalnya gpt-4o-mini
+            model="deepseek-chat",  # Gunakan model yang sesuai, misalnya gpt-4o-mini
             messages=[
                 {"role": "system", "content": "Anda adalah asisten yang ahli dalam mendeteksi berita hoaks."},
                 {"role": "user", "content": prompt}
             ],
-            max_tokens=300,
-            temperature=0.5
         )
 
         return response.choices[0].message.content
