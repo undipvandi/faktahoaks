@@ -9,7 +9,7 @@ st.write("Aplikasi evaluasi berita fakta dan hoaks dengan kecerdasan buatan")
 
 # Form input teks
 with st.form("hoax_form"):
-    news_text = st.text_area("Masukkan teks berita untuk dievaluasi apakah berita tersebut berpotensi hoaks atau tidak", height=200, placeholder="Masukkan teks berita di sini...")
+    news_text = st.text_area("Masukkan teks berita untuk dievaluasi, apakah berita tersebut berpotensi hoaks atau tidak", height=200, placeholder="Masukkan teks berita di sini...")
     submit_button = st.form_submit_button("Evaluasi")
 
 # Fungsi untuk memanggil OpenAI API
