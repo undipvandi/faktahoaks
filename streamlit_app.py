@@ -2,6 +2,17 @@ import streamlit as st
 import openai
 from openai import OpenAI
 
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #9DA5F2; /* Ganti dengan kode warna yang diinginkan, misalnya #f0f2f6 untuk abu-abu muda */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Judul aplikasi
 st.title("📰 Evaluasi Berita")
 st.subheader("Tugas Transformasi Digital")
